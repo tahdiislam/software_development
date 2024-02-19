@@ -5,18 +5,18 @@ from datetime import datetime
 class Ride_sharing:
     def __init__(self, company_name) -> None:
         self.company_name = company_name
-        self.rider = []
-        self.driver = []
-        self.ride = []
+        self.riders = []
+        self.drivers = []
+        self.rides = []
 
     def add_rider(self, rider):
-        self.rider.append(rider)
+        self.riders.append(rider)
 
     def add_driver(self, driver):
-        self.driver.append(driver)
+        self.drivers.append(driver)
 
     def __repr__(self) -> str:
-        return f"{self.company_name} with drivers {len(self.driver)} and riders {len(self.rider)}"
+        return f"{self.company_name} with drivers {len(self.drivers)} and riders {len(self.riders)}"
 
 
 class User(ABC):
@@ -48,16 +48,19 @@ class Rider(User):
             print(f"{amount}TK loaded successfully")
             print(f"Current balance is {self.wallet}TK")
 
-    def request_ride(self, destination):
+    def request_ride(self, ride_sharing, destination):
         if not self.current_ride:
             # TODO: set ride properly
             # TODO: set current ride via ride match
             ride_requiest = Ride_request(self, destination)
-            ride_matcher = Ride_matching()
+            ride_matcher = Ride_matching(ride_sharing.drivers)
             self.current_ride = ride_matcher.find_driver(ride_requiest)
 
     def update_location(self, current_location):
         self.current_location = current_location
+
+    def show_current_ride(self):
+        print(self.current_ride)
 
 
 class Driver(User):
@@ -73,11 +76,11 @@ class Driver(User):
 
 
 class Ride:
-    def __init__(self, start_location, end_location) -> None:
+    def __init__(self, rider, start_location, end_location) -> None:
         self.start_location = start_location
         self.end_location = end_location
         self.driver = None
-        self.rider = None
+        self.rider = rider
         self.start_time = None
         self.end_time = None
         self.estimated_fare = None
@@ -93,6 +96,9 @@ class Ride:
         self.rider.wallet -= self.estimated_fare
         self.rider.wallet += self.estimated_fare
 
+    def __repr__(self) -> str:
+        return f"Ride details. Started {self.start_location} to {self.end_location}"
+
 
 class Ride_request:
     def __init__(self, rider, end_location) -> None:
@@ -101,8 +107,8 @@ class Ride_request:
 
 
 class Ride_matching:
-    def __init__(self) -> None:
-        self.available_driver = []
+    def __init__(self, drivers) -> None:
+        self.available_driver = drivers
 
     def find_driver(self, ride_request):
         if len(self.available_driver) > 0:
@@ -156,3 +162,5 @@ niye_jao.add_rider(sakib)
 kala_pakhi = Driver("kala pakhi", "lala@pakhi.com", "30233", "gulsan", 2000)
 niye_jao.add_driver(kala_pakhi)
 print(niye_jao)
+sakib.request_ride(niye_jao, "uttara")
+sakib.show_current_ride()
