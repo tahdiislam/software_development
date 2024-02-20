@@ -1,0 +1,49 @@
+--> --> Main Page:
+    Press 1 for sign Up as a customer
+    Press 2 for sign UP as a Seller
+    Press 3 for login
+
+--> 2
+--> Enter your email:
+    enter your password:
+
+--> Please Login:
+    Press 1 for customer
+    press 2 for Seller
+
+--> 2 
+    if verification failed:
+        return user to main page
+    else
+        press 1 for add products
+        press 2 for back to main page
+    --> 1
+        enter product name:
+        enter product price:
+        enter product quantity:
+
+        press 1 for add product:
+        press 2 for back to main page:
+
+        --> 2
+            press 1 for sign up as a customer
+            press 2 for sign up as a seller
+            press 3 for login
+
+            --> 1
+                --> enter email:
+                --> enter password:
+
+            --> Please login:
+                Press 1 for customer
+                press 2 for seller
+
+                --> if verification failed
+                    return user to main page
+                    else:
+                        product list:
+                        'orange': (300, 10)
+                        'apple': (300, 20)
+                    
+                    Buy()
+                    Error handling

@@ -1,0 +1,18 @@
+User:
+    email
+    password
+    user_type
+    wallet
+    create_user()
+
+Customer:
+    User()
+
+Seller:
+    User()
+
+Product:
+    name
+    price
+    quantity
+    seller_email
