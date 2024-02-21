@@ -14,6 +14,7 @@ class Customer(User):
 class Seller(User):
     def __init__(self, email, password, user_type) -> None:
         self.earning = 0
+        self.products = []
         super().__init__(email, password, user_type)
 
     def add_earning(self, amount):
