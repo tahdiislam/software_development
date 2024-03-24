@@ -1,0 +1,154 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  height: 8rem;
+  width: 100%;
+  background: #1e6968;
+}
+.logo {
+  height: 50%;
+  width: auto;
+  align-self: center;
+}
+.nav_item {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 1.5rem;
+}
+main {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #1e6968;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.5rem;
+}
+
+.btn_parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.7rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background: #00ca9a;
+  border: none;
+  border-radius: 5px;
+}
+
+.appointment {
+}
+
+.doctors {
+  background-color: #1e6968;
+}
+
+.banner_img {
+  height: 40%;
+  width: auto;
+}
+
+.service_title {
+  padding-bottom: 5rem;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 8px 8px 16px gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.card_logo {
+  width: 40%;
+  height: auto;
+}
+.card_details {
+  font-size: 1.5rem;
+}
+
+.message_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input_box {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.text_box {
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.effect:focus{
+    border: 2px solid black;
+}
